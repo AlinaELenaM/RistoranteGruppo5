@@ -15,3 +15,17 @@ w
 G.idea/sonarlint/issuestore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d,b\4\b4a0b63ce8560bbc5de0f9995c20cc861dc2adb3
 W
 'src/Ristorante/consumatore/Cliente.java,0\e\0e02b310ef8bf615686d21290c01bcf04a829a9f
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+\
+,src/Ristorante/consumatore/Prenotazione.java,9\4\944559ef69a738b86c8e7c23d85a0447ee4245ae
+V
+&src/Ristorante/consumatore/Tavolo.java,0\0\004cf69d63fbcda73330da08b7e28ec8a864ba17
+T
+$src/Ristorante/enums/EnumTavoli.java,c\3\c319f2c776e9e62218be1872c846fe1de9aa0361
+H
+src/Ristorante/Main.java,1\2\126dd6ba9431dd9e89b0b2ffedeea5987c69cf8d
+T
+$src/Ristorante/consumatore/Sala.java,a\0\a0291935844325ea81b371acf8a8b89ff18fe5c3
+X
+(src/Ristorante/foodAndDrink/Portata.java,3\8\38ef8ed578788148656acfe10d64c045108d3cc6

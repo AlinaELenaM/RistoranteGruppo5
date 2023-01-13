@@ -4,7 +4,7 @@ import Ristorante.enums.MenuTypeEnum;
 
 /**
  * La classe che fa riferimento alla portata
- * @author Fabrizio Trupia , Alessandro Trupia , Nicola Boniello , Andrea Sciscioli
+ * @author Fabrizio Trupia, Alessandro Trupia, Nicola Boniello, Andrea Sciscioli
  * @version 1
  */
 
@@ -26,7 +26,7 @@ public class Portata {
     private Integer price;
 
     /**
-     * possibilità di indicare se un piatto è del giorno o meno
+     * possibilità d'indicare se un piatto è del giorno o meno
      */
 
     private boolean piattoDelGiorno;

@@ -1,5 +1,6 @@
 package Ristorante;
 
+import Ristorante.SqlService.ClienteService;
 import Ristorante.consumatore.Cliente;
 import Ristorante.consumatore.Prenotazione;
 import Ristorante.consumatore.Sala;
@@ -9,6 +10,7 @@ import Ristorante.enums.MenuTypeEnum;
 import Ristorante.foodAndDrink.*;
 import Ristorante.foodAndDrink.dishEntities.*;
 
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.*;
 
@@ -188,5 +190,12 @@ public class Main {
 
         sala.stampaSala();
 
+        //db connection
+        ClienteService clienteService = new ClienteService();
+        try {
+            clienteService.createClientiTable();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

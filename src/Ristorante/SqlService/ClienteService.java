@@ -9,8 +9,8 @@ public class ClienteService {
 
 
     final String DB_URL = "jdbc:mysql://localhost:3306/newdb";
-    final String USER = "root";
-    final String PASS = "admin";
+    final String USER = "utente";
+    final String PASS = "ristorante";
 
     public void createClientiTable() throws SQLException {
 
@@ -18,19 +18,18 @@ public class ClienteService {
         Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
         Statement statement = connection.createStatement();
         String queryCreateCliente = ""
-                + "CREATE TABLE newdb.cliente_service ( "
+                + "CREATE TABLE newdb.cliente ( "
                 + "	cliente_id INT auto_increment NOT NULL, "
                 + "	cognome varchar(100) NULL, "
                 + "	gusti varchar(15) NULL, "
-                + "	CONSTRAINT ClienteService_pk PRIMARY KEY (cliente_id) "
+                + "	CONSTRAINT cliente_pk PRIMARY KEY (cliente_id) "
                 + ") "
                 + "ENGINE=InnoDB "
                 + "DEFAULT CHARSET=utf8mb4 "
                 + "COLLATE=utf8mb4_0900_ai_ci;";
+
         statement.executeUpdate(queryCreateCliente);
         statement.close();
-        System.out.println("eseguito con successo");
-
-
+        System.out.println("Eseguito con successo!");
     }
 }
