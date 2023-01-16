@@ -9,6 +9,7 @@ import Ristorante.enums.MenuTypeEnum;
  */
 
 public class Cliente {
+    private Integer clienteId;
 
     /**
      * cognome dei clienti
@@ -22,17 +23,24 @@ public class Cliente {
 
     /**
      * metodo costruttore cliente
+     *
      * @param cognome --> cognome del cliente
-     * @param gusti --> gusto del cliente
+     * @param gusti   --> gusto del cliente
      */
-    public Cliente(String cognome, MenuTypeEnum gusti) {
+    public Cliente(Integer clienteId, String cognome, MenuTypeEnum gusti) {
+        this.clienteId = clienteId;
         this.cognome = cognome;
         this.gusti = gusti;
     }
-    @Override
-    public String toString() {
-        return "Prenotazione cliente : " + cognome;
+
+    public Integer getClienteId() {
+        return clienteId;
     }
+
+    public void setClienteId(Integer clienteId) {
+        this.clienteId = clienteId;
+    }
+
     public String getCognome() {
         return cognome;
     }
@@ -47,6 +55,15 @@ public class Cliente {
 
     public void setGusti(MenuTypeEnum gusti) {
         this.gusti = gusti;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente: " +
+                "clienteId= " + clienteId +
+                ",cognome= '" + cognome + '\'' +
+                ",gusti= " + gusti +
+                "\n";
     }
 
     /**

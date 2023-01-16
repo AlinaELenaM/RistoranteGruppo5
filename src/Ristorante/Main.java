@@ -137,9 +137,9 @@ public class Main {
 
 
         System.out.println("============SEZIONE CLIENTE============");
-        Cliente cliente = new Cliente("Rossi",  MenuTypeEnum.CLASSICO);
-        Cliente cliente1 = new Cliente("De paolo", MenuTypeEnum.VEGANO);
-        Cliente cliente2 = new Cliente("De luca", MenuTypeEnum.VEGETARIANO);
+        Cliente cliente = new Cliente(1,"Rossi",  MenuTypeEnum.CLASSICO);
+        Cliente cliente1 = new Cliente(2,"De paolo", MenuTypeEnum.VEGANO);
+        Cliente cliente2 = new Cliente(3,"De luca", MenuTypeEnum.VEGETARIANO);
 
 
         cliente.infoCliente();
