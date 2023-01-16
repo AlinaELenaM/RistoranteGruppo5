@@ -190,12 +190,6 @@ public class Main {
 
         sala.stampaSala();
 
-        //db connection
-        ClienteService clienteService = new ClienteService();
-        try {
-            clienteService.createClientiTable();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+
     }
 }
