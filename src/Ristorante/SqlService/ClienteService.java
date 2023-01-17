@@ -32,7 +32,6 @@ public class ClienteService {
      */
     public void createClienteTable() throws SQLException {
 
-
         Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
         Statement statement = connection.createStatement();
         String queryCreateCliente = ""

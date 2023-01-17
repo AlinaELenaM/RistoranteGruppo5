@@ -1,5 +1,6 @@
 package Ristorante.foodAndDrink.dishEntities;
 
+import Ristorante.enums.TipoPortataEnum;
 import Ristorante.foodAndDrink.Portata;
 import Ristorante.enums.MenuTypeEnum;
 
@@ -10,13 +11,13 @@ import Ristorante.enums.MenuTypeEnum;
  */
 public class Antipasti extends Portata {
     /**
-     * metodo costruttore della classe Ristorante.FoodAndDrink.PortEnti.Antipasti
-     * @param type --> tipo della portata Ristorante.FoodAndDrink.PortEnti.Antipasti
-     * @param name --> nome della portata Ristorante.FoodAndDrink.PortEnti.Antipasti
-     * @param price --> prezzo della portata Ristorante.FoodAndDrink.PortEnti.Antipasti
+     * metodo costruttore della classe Antipasti
+     * @param name --> nome dell'antipasto
+     * @param price --> prezzo dell'antipasto
      * @param piattoDelGiorno --> piatto del giorno
+     * @param tipoMenu --> tipo(categoria) del menu a cui appartiene(CLASSICO, VEGETARIANO, VEGANO)
      */
-    public Antipasti(String type, String name, Integer price, boolean piattoDelGiorno, MenuTypeEnum tipoPortata) {
-        super(type, name, price,piattoDelGiorno, tipoPortata);
+    public Antipasti(String name, Double price, boolean piattoDelGiorno, MenuTypeEnum tipoMenu) {
+        super(TipoPortataEnum.ANTIPASTI, name, price ,piattoDelGiorno, tipoMenu);
     }
 }

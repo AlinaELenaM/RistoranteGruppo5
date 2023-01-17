@@ -120,7 +120,7 @@ public class Menu {
         System.out.println("Gentile " + cliente.getCognome()
                 + " in base alle tue preferenze abbiamo il seguente menu per te");
         for(Portata portata : listaPortata){
-            if (cliente.getGusti() == portata.getTipoPortata()){
+            if (cliente.getGusti() == portata.getTipoMenu()){
                 System.out.println(portata.stampaInfoPortata());
             }
         }
