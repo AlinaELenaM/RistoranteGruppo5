@@ -14,14 +14,15 @@ public class PrimiPiatti extends Portata {
 
     /**
      * metodo costruttore della classe PrimiPiatti
+     * @param portataId --> id della portata
      * @param name --> nome del primo piatto
      * @param price --> prezzo del primo piatto
      * @param piattoDelGiorno --> piatto del giorno
      * @param tipoMenu --> tipo(categoria) del menu a cui appartiene(CLASSICO, VEGETARIANO, VEGANO)
      */
 
-    public PrimiPiatti(String name, Double price, boolean piattoDelGiorno, MenuTypeEnum tipoMenu) {
-        super(TipoPortataEnum.PRIMI_PIATTI, name, price ,piattoDelGiorno, tipoMenu);
+    public PrimiPiatti(Integer portataId, String name, Double price, boolean piattoDelGiorno, MenuTypeEnum tipoMenu) {
+        super(portataId, TipoPortataEnum.PRIMI_PIATTI, name, price ,piattoDelGiorno, tipoMenu);
 
     }
 }

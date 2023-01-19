@@ -5,14 +5,16 @@ import Ristorante.SqlService.PortataService;
 import Ristorante.consumatore.Cliente;
 import Ristorante.enums.MenuTypeEnum;
 import Ristorante.foodAndDrink.Portata;
-import Ristorante.foodAndDrink.dishEntities.Antipasti;
+import Ristorante.foodAndDrink.dishEntities.*;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SqlMain {
     public static void main(String[] args) throws SQLException {
 /*
+    //--------CLIENTE SERVICE
         ClienteService clienteService = new ClienteService();
 
         Cliente cliente1 = new Cliente(1,"Rossi",  MenuTypeEnum.CLASSICO);
@@ -38,13 +40,41 @@ public class SqlMain {
         clienteService.deleteCliente(clienteDb3);
 
         clienteService.printAllClienti();
-    */
+ */
+
+    //--------PORTATA SERVICE
         PortataService portataService = new PortataService();
 
-        Portata antipasto1 = new Antipasti("Tagliere di salumi" , 8.0,false, MenuTypeEnum.CLASSICO);
+        //portataService.createPortataTable();
 
-        portataService.createPortataTable();
-        portataService.insertPortataIntoTable(antipasto1);
+        Portata antipasto1 = new Antipasti(1,"Tagliere di salumi" , 8.0,false, MenuTypeEnum.CLASSICO);
+        Portata primoPiatto1 = new PrimiPiatti(2,"Spaghetti alla carbonara", 11.5,true, MenuTypeEnum.CLASSICO);
+        Portata secondoPiatto1 = new SecondiPiatti(3,"Fiorentina" , 15.5,false, MenuTypeEnum.CLASSICO);
+        Portata dessert1 = new Dessert(4,"tortini ripieni", 3.5,false, MenuTypeEnum.CLASSICO);
+        Portata drink1 = new Drink(5,"Coca-cola", 2.0, false, MenuTypeEnum.CLASSICO);
+        Portata drink2 = new Drink(6,"Acqua", 2.0, false, MenuTypeEnum.CLASSICO);
+
+//        portataService.insertPortataIntoTable(antipasto1);
+//        portataService.insertPortataIntoTable(primoPiatto1);
+//        portataService.insertPortataIntoTable(secondoPiatto1);
+//        portataService.insertPortataIntoTable(dessert1);
+//        portataService.insertPortataIntoTable(drink1);
+        //portataService.insertPortataIntoTable(drink2);
+
+        List<Portata> listaPortate = portataService.getAllPortata();
+
+        listaPortate.get(0).setPrice(10.5);
+        listaPortate.get(0).setName("Tagliere Salumi");
+        //portataService.updatePortata(listaPortate.get(0));
+
+        listaPortate.get(3).setPiattoDelGiorno(true);
+        //portataService.updatePortata(listaPortate.get(3));
+
+        //portataService.deletePortata(listaPortate.get(4));
+        portataService.printAllPortata();
+
+
+
 
     }
 }

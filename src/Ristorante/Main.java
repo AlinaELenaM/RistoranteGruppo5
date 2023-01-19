@@ -29,10 +29,10 @@ public class Main {
 
         Menu menu = new Menu(new ArrayList<>());
 
+/*
 
-        /**
-         * ANTIPASTI
-         */
+         //ANTIPASTI
+
         Portata antipasto1 = new Antipasti("Tagliere di salumi" , 8.0,false, MenuTypeEnum.CLASSICO);
         Portata antipasto2 = new Antipasti("Rustici di carne" , 6.0,true, MenuTypeEnum.CLASSICO);
         Portata antipasto3 = new Antipasti("Tartare di manzo", 8.0,false, MenuTypeEnum.CLASSICO);
@@ -49,9 +49,9 @@ public class Main {
         menu.addPortata(antipasto6);
         menu.addPortata(antipasto7);
 
-        /**
-         * PRIMI PIATTI
-         */
+
+         //PRIMI PIATTI
+
         Portata primoPiatto1 = new PrimiPiatti("Spaghetti alla carbonara", 11.5,true, MenuTypeEnum.CLASSICO);
         Portata primoPiatto2 = new PrimiPiatti("Rigatoni alla bolognese", 9.0,false, MenuTypeEnum.CLASSICO);
         Portata primoPiatto3 = new PrimiPiatti("Tortiglioni salsiccia e cipolla", 8.0,false, MenuTypeEnum.CLASSICO);
@@ -68,9 +68,9 @@ public class Main {
         menu.addPortata(primoPiatto6);
         menu.addPortata(primoPiatto7);
 
-        /**
-         * Secondi Piatti
-         */
+
+         //Secondi Piatti
+
         Portata secondoPiatto1 = new SecondiPiatti("Fiorentina" , 15.5,false, MenuTypeEnum.CLASSICO);
         Portata secondoPiatto2 = new SecondiPiatti("Involtini di carne" , 8.0,false, MenuTypeEnum.CLASSICO);
         Portata secondoPiatto3 = new SecondiPiatti("Cotoletta di pollo" , 7.0,true, MenuTypeEnum.CLASSICO);
@@ -87,9 +87,9 @@ public class Main {
         menu.addPortata(secondoPiatto6);
         menu.addPortata(secondoPiatto7);
 
-        /**
-         * Dessert
-         */
+
+          //Dessert
+
         Portata dessert1 = new Dessert("tortini ripieni", 3.5,false, MenuTypeEnum.CLASSICO);
         Portata dessert2 = new Dessert("torta di ciliege", 9.0,true, MenuTypeEnum.CLASSICO);
         Portata dessert3 = new Dessert("crostata di mele", 6.0,false, MenuTypeEnum.CLASSICO);
@@ -178,7 +178,7 @@ public class Main {
                 LocalDateTime.of(2022,12,20, 20,00));
 
         sala.stampaSala();
-
+*/
 
     }
 }
