@@ -31,7 +31,7 @@ public class MenuService {
         Statement statement = connection.createStatement();
         String queryCreateMenu = ""
                 + "CREA TABELLA newdb.menu ( "
-                + " id INT NOT NULL "
+                + "menu_id INT NOT NULL, "
                 + " portata varchar(25) NULL, "
                 + " nome varchar(100) NULL, "
                 + " `tipo` varchar(25) NULL, "
