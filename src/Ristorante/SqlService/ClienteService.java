@@ -145,7 +145,7 @@ public class ClienteService {
                     MenuTypeEnum.valueOf(resultSet.getString("gusti"))));
         }
 
-        connection.close();
+        statement.close();
         return clienti;
     }
 }

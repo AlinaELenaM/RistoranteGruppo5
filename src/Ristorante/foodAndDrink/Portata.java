@@ -9,8 +9,9 @@ import Ristorante.enums.TipoPortataEnum;
  * @version 1
  */
 
-public abstract class Portata {
+public class Portata {
 
+    private Integer portataId;
     /**
      * Tipo della portata(DESSERT, DRINK, PRIMI_PIATTI, ECC)
      */
@@ -38,14 +39,16 @@ public abstract class Portata {
 
     /**
      * Metodo costruttore della classe portata
+     * @param portataId --> id della portata
      * @param tipoPortataEnum --> tipo della portata(DESSERT, DRINK, PRIMI_PIATTI, ECC)
      * @param name --> nome del piatto
      * @param price --> prezzo del piatto
      * @param piattoDelGiorno --> piatto del giorno
      * @param tipoMenu --> tipo(categoria) del menu a cui appartiene(CLASSICO, VEGETARIANO, VEGANO)
      */
-    public Portata(TipoPortataEnum tipoPortataEnum, String name,
+    public Portata(Integer portataId, TipoPortataEnum tipoPortataEnum, String name,
                    Double price, boolean piattoDelGiorno, MenuTypeEnum tipoMenu){
+        this.portataId = portataId;
         this.tipoPortataEnum = tipoPortataEnum;
         this.name = name;
         this.price = price;
@@ -53,6 +56,12 @@ public abstract class Portata {
         this.tipoMenu = tipoMenu;
     }
 
+    public Integer getPortataId() {
+        return portataId;
+    }
+    public void setPortataId(Integer portataId) {
+        this.portataId = portataId;
+    }
     public TipoPortataEnum getTipoPortataEnum() {
         return tipoPortataEnum;
     }

@@ -107,7 +107,7 @@ public class Menu {
         System.out.println("==============PIATTO DEL GIORNO==============");
         for (Portata piattoDelGiorno : listaPortata) {
             if (piattoDelGiorno.isPiattoDelGiorno()) {
-                System.out.println("Piatto del giorno raccomandato: " + piattoDelGiorno.getType() + " = " + piattoDelGiorno.getName() + " - " + piattoDelGiorno.getPrice() + " euro ");
+                System.out.println("Piatto del giorno raccomandato: " + piattoDelGiorno.getTipoPortataEnum() + " = " + piattoDelGiorno.getName() + " - " + piattoDelGiorno.getPrice() + " euro ");
             }
         }
     }
