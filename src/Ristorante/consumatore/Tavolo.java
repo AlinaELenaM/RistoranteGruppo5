@@ -11,6 +11,8 @@ import java.util.List;
 public class Tavolo {
     private EnumTavoli tipoTavolo;
     private Integer numeroTavolo;
+
+    private Sala salaDiAppartenenza;
     private final List<Prenotazione> listaPrenotazioni = new ArrayList<>();
 //lista prenotazioni
 
@@ -20,9 +22,11 @@ public class Tavolo {
      * @param tipoTavolo   tipo del tavolo (grande, medio, piccolo)
      * @param numeroTavolo numero del tavolo (identificativo)
      */
-    public Tavolo(EnumTavoli tipoTavolo, Integer numeroTavolo){
+    public Tavolo(EnumTavoli tipoTavolo, Integer numeroTavolo, Sala salaDiAppartenenza){
         this.tipoTavolo= tipoTavolo;
         this.numeroTavolo = numeroTavolo;
+        this.salaDiAppartenenza = salaDiAppartenenza;
+        aggiungiTavolo();
     }
 
     public EnumTavoli getTipoTavolo() {
@@ -59,6 +63,19 @@ public class Tavolo {
                 " Tipo tavolo: " + tipoTavolo);
         for(Prenotazione prenotazione : listaPrenotazioni){
             prenotazione.stampaPrenotazione();
+        }
+    }
+    public void aggiungiTavolo(){
+        if (tipoTavolo == EnumTavoli.MINI){
+            salaDiAppartenenza.tavoliTotaliMini += 1;
+        } else if (tipoTavolo == EnumTavoli.PICCOLO){
+            salaDiAppartenenza.tavoliTotaliPiccoli += 1;
+        } else if(tipoTavolo == EnumTavoli.MEDIO){
+            salaDiAppartenenza.tavoliTotaliMedio += 1;
+        } else if (tipoTavolo == EnumTavoli.FAMIGLIA){
+            salaDiAppartenenza.tavoliTotaliFamiglia += 1;
+        } else if (tipoTavolo == EnumTavoli.GRANDE){
+            salaDiAppartenenza.tavoliTotaliGrande += 1;
         }
     }
 }
