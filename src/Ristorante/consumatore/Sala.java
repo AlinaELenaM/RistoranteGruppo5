@@ -46,28 +46,52 @@ public class Sala {
      */
     //TODO gestire la duplicazione prenotazioni sullo stesso tavolo
     /** il metodo prenotaTavolo gestisce l'overbooking*/
-    public void prenotaTavolo(Cliente cliente, EnumTavoli tipoTavoloRichiesto, LocalDateTime orarioPrenotazione){
-        if (tipoTavoloRichiesto == EnumTavoli.MINI){
-            if (tavoliTotaliMini > 0){System.out.println("Il tavolo e disponibile per " + cliente.getCognome());
-            } else System.out.println("Il tavolo e disponibile per " + cliente.getCognome());
+    public void prenotaTavolo(Prenotazione prenotazione){
+        if (prenotazione.getMisuraTavolo() == EnumTavoli.MINI){
+            if (tavoliTotaliMini > 0){System.out.println("Il tavolo e disponibile per " + prenotazione.getCliente().getCognome());
+                tavoliTotaliMini -= 1;
+            } else System.out.println("Il tavolo e disponibile per " + prenotazione.getCliente().getCognome());
         }
-        if (tipoTavoloRichiesto == EnumTavoli.PICCOLO){
-            if (tavoliTotaliPiccoli > 0){System.out.println("Il tavolo e disponibile per " + cliente.getCognome());
-            } else System.out.println("Il tavolo richiesto non e disponibile per " + cliente.getCognome());
+        if (prenotazione.getMisuraTavolo() == EnumTavoli.PICCOLO){
+            if (tavoliTotaliPiccoli > 0){System.out.println("Il tavolo e disponibile per " + prenotazione.getCliente().getCognome());
+                tavoliTotaliPiccoli -= 1;
+            } else System.out.println("Il tavolo richiesto non e disponibile per " + prenotazione.getCliente().getCognome());
         }
-        if (tipoTavoloRichiesto == EnumTavoli.MEDIO){
-            if (tavoliTotaliMedio > 0){System.out.println("Il tavolo e disponibile per " + cliente.getCognome());
-            } else System.out.println("Il tavolo richiesto non e disponibile per " + cliente.getCognome());
+        if (prenotazione.getMisuraTavolo() == EnumTavoli.MEDIO){
+            if (tavoliTotaliMedio > 0){System.out.println("Il tavolo e disponibile per " + prenotazione.getCliente().getCognome());
+                tavoliTotaliMedio -= 1;
+            } else System.out.println("Il tavolo richiesto non e disponibile per " + prenotazione.getCliente().getCognome());
         }
-        if (tipoTavoloRichiesto == EnumTavoli.FAMIGLIA){
-            if (tavoliTotaliFamiglia > 0){System.out.println("Il tavolo e disponibile per " + cliente.getCognome());
-            } else System.out.println("Il tavolo richiesto non e disponibile per " + cliente.getCognome());
+        if (prenotazione.getMisuraTavolo() == EnumTavoli.FAMIGLIA){
+            if (tavoliTotaliFamiglia > 0){System.out.println("Il tavolo e disponibile per " + prenotazione.getCliente().getCognome());
+                tavoliTotaliFamiglia -= 1;
+            } else System.out.println("Il tavolo richiesto non e disponibile per " + prenotazione.getCliente().getCognome());
         }
-        if (tipoTavoloRichiesto == EnumTavoli.GRANDE){
-            if (tavoliTotaliGrande > 0){System.out.println("Il tavolo e disponibile per " + cliente.getCognome());
-            } else System.out.println("Il tavolo richiesto non e disponibile per " + cliente.getCognome());
+        if (prenotazione.getMisuraTavolo() == EnumTavoli.GRANDE){
+            if (tavoliTotaliGrande > 0){System.out.println("Il tavolo e disponibile per " +prenotazione.getCliente().getCognome());
+                tavoliTotaliGrande -= 1;
+            } else System.out.println("Il tavolo richiesto non e disponibile per " + prenotazione.getCliente().getCognome());
         }
         ;
+    }
+    public void liberaTavolo(Prenotazione prenotazione){
+        if (prenotazione.getMisuraTavolo() == EnumTavoli.MINI){
+            tavoliTotaliGrande += 1;
+        }
+        if (prenotazione.getMisuraTavolo() == EnumTavoli.PICCOLO){
+            tavoliTotaliGrande += 1;
+        }
+        if (prenotazione.getMisuraTavolo() == EnumTavoli.MEDIO){
+            tavoliTotaliGrande += 1;
+        }
+        if (prenotazione.getMisuraTavolo() == EnumTavoli.FAMIGLIA){
+            tavoliTotaliGrande += 1;
+        }
+        if (prenotazione.getMisuraTavolo() == EnumTavoli.GRANDE){
+            tavoliTotaliGrande += 1;
+        }
+
+
     }
 
     /**
