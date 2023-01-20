@@ -9,12 +9,14 @@ import java.util.List;
  * The type Tavolo.
  */
 public class Tavolo {
+    private Integer tavoloId;
     private EnumTavoli tipoTavolo;
     private Integer numeroTavolo;
-
     private Sala salaDiAppartenenza;
     private final List<Prenotazione> listaPrenotazioni = new ArrayList<>();
 //lista prenotazioni
+
+
 
     /**
      * Inizializza un Tavolo
@@ -29,6 +31,11 @@ public class Tavolo {
         aggiungiTavolo();
     }
 
+    public Tavolo(int tavoloId, EnumTavoli tipoTavolo, int numeroTavolo) {
+        this.tipoTavolo= tipoTavolo;
+        this.numeroTavolo = numeroTavolo;
+    }
+
     public EnumTavoli getTipoTavolo() {
         return tipoTavolo;
     }
@@ -39,6 +46,26 @@ public class Tavolo {
 
     public Integer getNumeroTavolo() {
         return numeroTavolo;
+    }
+
+    public Integer getTavoloId() {
+        return tavoloId;
+    }
+
+    public void setTavoloId(Integer tavoloId) {
+        this.tavoloId = tavoloId;
+    }
+
+    public Sala getSalaDiAppartenenza() {
+        return salaDiAppartenenza;
+    }
+
+    public void setSalaDiAppartenenza(Sala salaDiAppartenenza) {
+        this.salaDiAppartenenza = salaDiAppartenenza;
+    }
+
+    public List<Prenotazione> getListaPrenotazioni() {
+        return listaPrenotazioni;
     }
 
     public void setNumeroTavolo(Integer numeroTavolo) {

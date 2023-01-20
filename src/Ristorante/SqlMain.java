@@ -3,7 +3,10 @@ package Ristorante;
 import Ristorante.SqlService.ClienteService;
 import Ristorante.SqlService.MenuService;
 import Ristorante.SqlService.PortataService;
+import Ristorante.SqlService.TavoloService;
 import Ristorante.consumatore.Cliente;
+import Ristorante.consumatore.Tavolo;
+import Ristorante.enums.EnumTavoli;
 import Ristorante.enums.MenuTypeEnum;
 import Ristorante.foodAndDrink.Menu;
 import Ristorante.foodAndDrink.Portata;
@@ -75,32 +78,55 @@ public class SqlMain {
         //portataService.deletePortata(listaPortate.get(4));
         portataService.printAllPortata();
 
+        //--------MENU SERVICE
 
-        MenuService menuService = new MenuService();
+    //    MenuService menuService = new MenuService();
 
-        Menu menu1 = new Menu(2,"Antonio",MenuTypeEnum.CLASSICO);
-        Menu menu2 = new Menu(3,"Luca",MenuTypeEnum.VEGETARIANO);
-        Menu menu3 = new Menu(4,"Lorenzo",MenuTypeEnum.VEGANO);
+        //   Menu menu1 = new Menu(2,"Antonio",MenuTypeEnum.CLASSICO);
+        //   Menu menu2 = new Menu(3,"Luca",MenuTypeEnum.VEGETARIANO);
+        //   Menu menu3 = new Menu(4,"Lorenzo",MenuTypeEnum.VEGANO);
 
 
-        menuService.createMenuTable();
+        //   menuService.createMenuTable();
 
-        menuService.insertMenuIntoTable(menu1);
-        menuService.insertMenuIntoTable(menu2);
-        menuService.insertMenuIntoTable(menu3);
+        //   menuService.insertMenuIntoTable(menu1);
+        //   menuService.insertMenuIntoTable(menu2);
+        //  menuService.insertMenuIntoTable(menu3);
 
-        List<Menu> listaMenu = menuService.getAllMenu();
+        //   List<Menu> listaMenu = menuService.getAllMenu();
 
-        Menu menuDb1 = listaMenu.get(0);
-        Menu menuDb2 = listaMenu.get(1);
-        Menu menuDb3 = listaMenu.get(2);
+        //   Menu menuDb1 = listaMenu.get(0);
+        //    Menu menuDb2 = listaMenu.get(1);
+        //   Menu menuDb3 = listaMenu.get(2);
 
-        menuService.updateMenuDetails(menuDb1,"Antonio", MenuTypeEnum.CLASSICO);
-        menuService.updateMenuDetails(menuDb2, "Luca", MenuTypeEnum.VEGETARIANO);
+        //   menuService.updateMenuDetails(menuDb1,"Antonio", MenuTypeEnum.CLASSICO);
+        //   menuService.updateMenuDetails(menuDb2, "Luca", MenuTypeEnum.VEGETARIANO);
 
-        menuService.deleteMenu(menuDb3);
+        //   menuService.deleteMenu(menuDb3);
 
-        menuService.printAllMenu();
+        //   menuService.printAllMenu();
+
+
+        //--------TAVOLO SERVICE
+        TavoloService tavoloService= new TavoloService();
+
+        tavoloService.createTavoloTable();
+
+        Tavolo tavolo1 = new Tavolo(1 ,EnumTavoli.PICCOLO , 1);
+        Tavolo tavolo2 = new Tavolo(2,EnumTavoli.MEDIO , 2);
+        Tavolo tavolo3 = new Tavolo(3,EnumTavoli.PICCOLO , 3);
+
+        tavoloService.insertTavoloIntoTable(tavolo1);
+        tavoloService.insertTavoloIntoTable(tavolo2);
+        tavoloService.insertTavoloIntoTable(tavolo3);
+
+
+
+        List<Tavolo> lisaTavolo = tavoloService.getAllTavolo();
+
+        lisaTavolo.get(1).setTipoTavolo(EnumTavoli.GRANDE);
+        tavoloService.updateTavolo(lisaTavolo.get(1));
+
 
 
     }
