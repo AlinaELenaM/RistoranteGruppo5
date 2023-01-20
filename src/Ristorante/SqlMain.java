@@ -1,9 +1,11 @@
 package Ristorante;
 
 import Ristorante.SqlService.ClienteService;
+import Ristorante.SqlService.MenuService;
 import Ristorante.SqlService.PortataService;
 import Ristorante.consumatore.Cliente;
 import Ristorante.enums.MenuTypeEnum;
+import Ristorante.foodAndDrink.Menu;
 import Ristorante.foodAndDrink.Portata;
 import Ristorante.foodAndDrink.dishEntities.*;
 
@@ -74,6 +76,31 @@ public class SqlMain {
         portataService.printAllPortata();
 
 
+        MenuService menuService = new MenuService();
+
+        Menu menu1 = new Menu(2,"Antonio",MenuTypeEnum.CLASSICO);
+        Menu menu2 = new Menu(3,"Luca",MenuTypeEnum.VEGETARIANO);
+        Menu menu3 = new Menu(4,"Lorenzo",MenuTypeEnum.VEGANO);
+
+
+        menuService.createMenuTable();
+
+        menuService.insertMenuIntoTable(menu1);
+        menuService.insertMenuIntoTable(menu2);
+        menuService.insertMenuIntoTable(menu3);
+
+        List<Menu> listaMenu = menuService.getAllMenu();
+
+        Menu menuDb1 = listaMenu.get(0);
+        Menu menuDb2 = listaMenu.get(1);
+        Menu menuDb3 = listaMenu.get(2);
+
+        menuService.updateMenuDetails(menuDb1,"Antonio", MenuTypeEnum.CLASSICO);
+        menuService.updateMenuDetails(menuDb2, "Luca", MenuTypeEnum.VEGETARIANO);
+
+        menuService.deleteMenu(menuDb3);
+
+        menuService.printAllMenu();
 
 
     }

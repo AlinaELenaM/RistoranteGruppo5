@@ -1,6 +1,7 @@
 package Ristorante.foodAndDrink;
 
 import Ristorante.consumatore.Cliente;
+import Ristorante.enums.MenuTypeEnum;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,10 +13,11 @@ import java.util.List;
  */
 public class Menu {
 
+    private Integer menuId;
     /**
      * Il tipo di menu
      */
-    private String type;
+    private MenuTypeEnum type;
 
     /**
      * Il nome del ristorante
@@ -44,15 +46,25 @@ public class Menu {
      * Metodo costruttore classe Menu
      * @param list lista delle portate
      */
-    public Menu(List<Portata> list) {
+    public Menu(List<Portata> list, Integer menuId,String name, String type) {
         this.listaMenu = list;
     }
 
-    public String getType() {
+    public Menu(int menu_id, String name, MenuTypeEnum type) {
+        this.menuId = menuId;
+        this.name = name;
+        this.type = type;
+    }
+
+    public Integer getMenuId() {
+        return menuId;
+    }
+
+    public MenuTypeEnum getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(MenuTypeEnum type) {
         this.type = type;
     }
 
@@ -125,8 +137,15 @@ public class Menu {
             }
         }
     }
+    public String toString() {
+        return "Menu: " +
+                "menuId= " + menuId +
+                ",name= '" + name + '\'' +
+                ",type= " + type +
+                "\n";
+    }
 
-
-
-
+    public void infoMenu() {
+        System.out.println("Menu: " + this.name + " tipo menu : " + this.type);
+    }
 }
