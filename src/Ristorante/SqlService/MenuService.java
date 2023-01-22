@@ -33,14 +33,11 @@ public class MenuService {
         Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
         Statement statement = connection.createStatement();
         String queryCreateMenu = ""
-                + "CREA TABELLA newdb.menu ( "
-                + "menu_id INT NOT NULL, "
-                + " nome varchar(100) NULL, "
-                + " `tipo` varchar(25) NULL "
-                + ") "
-                + "MOTORE=InnoDB "
-                + "SET CARATTERI PREDEFINITO=utf8mb4 "
-                + "COLLATE=utf8mb4_0900_ai_ci;";
+                + "CREATE TABLE IF NOT EXISTS newdb.menu ( "
+                + "menu_id INT auto_increment NOT NULL, "
+                + "nome varchar(100) NULL, "
+                + "tipo varchar(25) NULL "
+                + "); ";
 
         statement.executeUpdate(queryCreateMenu);
         statement.close();
@@ -55,7 +52,7 @@ public class MenuService {
 
         String insertQuery =
                 """ 
-                 INSERT INTO newdb.menu (name, type)
+                 INSERT INTO newdb.menu (name, tipo)
                  VALUES ('""" + menu.getName() + "', '" + menu.getType() + "');";
 
         statement.executeUpdate(insertQuery);

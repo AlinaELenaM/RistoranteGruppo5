@@ -103,4 +103,37 @@ private final Connection connection = DbConnection.getConnection();
         statement.close();
         System.out.println("Portata cancellata!");
     }
+    public void alterTableForeignKey() throws SQLException {
+        Statement statement = connection.createStatement();
+
+        String alterTableAddMenuIdColumnQuery = ""
+                + "ALTER TABLE newdb.portata ADD menu_id INT NOT NULL;";
+
+
+        String alterTableAddForeignKey = ""
+                + "ALTER TABLE newdb.portata ADD CONSTRAINT portata_FK FOREIGN KEY " +
+                "(menu_id) REFERENCES newdb.menu(menu_id);";
+
+        statement.executeUpdate(alterTableAddMenuIdColumnQuery);
+        statement.executeUpdate(alterTableAddForeignKey);
+
+        System.out.println("menu_id aggiunto e creata la foreign key!");
+        statement.close();
+    }
+    public void addPortataIntoMenu (Portata portata, String menuName) throws SQLException {
+        Statement statement = connection.createStatement();
+
+        int menu_id =0;
+        String selectMenuId = "SELECT menu_id FROM newdb.menu WHERE name='" +menuName +"';";
+        ResultSet result = statement.executeQuery(selectMenuId);
+        while(result.next()) {
+            menu_id = result.getInt("menu_id");
+        }
+
+        String addMenuIntoPortata = "UPDATE portata SET menu_id = " +  menu_id
+                + " WHERE portata_id=" +portata.getPortataId() +";";
+        statement.executeUpdate(addMenuIntoPortata);
+        System.out.println("Portata aggiunta nel menu specifico!");
+        statement.close();
+    }
 }
